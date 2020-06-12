@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 @RestController
 public class FileController {
 
-
     @Autowired
     FileService fileService;
 
@@ -52,7 +51,7 @@ public class FileController {
 
     }
 
-    @GetMapping("/fetch")
+    @GetMapping("/Fetch")
     public ResponseEntity<List<FileInfo>> getAllFiles() {
 
         List<FileInfo> fileInfoList = fileService.loadAll().map(path -> {
@@ -68,7 +67,7 @@ public class FileController {
     }
 
 
-    @GetMapping("/fetch/{filename:.+}")
+    @GetMapping("/Download/{filename:.+}")
     public ResponseEntity<Resource> getFile(@PathVariable String filename) {
         Resource file = fileService.load(filename);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
