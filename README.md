@@ -15,7 +15,16 @@ mvn clean package
 
 mvn spring-boot:run
 
-Test the application with the help of postman.
+***Test the application with the help of postman ***
+
+
+
+
+
+
+
+
+
 
 
 
